@@ -1,0 +1,175 @@
+package cursed.neverendingnight.core.capabilities.interfaces; ///* (C) TAMA Studios 2025 */
+//package owo.bladecraftstudios.toomanyfountains.core.capabilities.interfaces;
+//
+//import com.code.tama.tts.client.gui.ARSGrid;
+//import com.code.tama.tts.client.gui.ARSPos;
+//import com.code.tama.tts.core.tileentities.ExteriorTile;
+//import com.code.tama.tts.server.data.json.dataHolders.flightEvents.FlightEvent;
+//import com.code.tama.tts.server.data.tardis.PowerHandler;
+//import com.code.tama.tts.server.data.tardis.data.*;
+//import com.code.tama.tts.server.tardis.ExteriorState;
+//import net.minecraft.nbt.CompoundTag;
+//import net.minecraft.resources.ResourceKey;
+//import net.minecraft.resources.ResourceLocation;
+//import net.minecraft.world.level.Level;
+//import net.minecraftforge.api.distmarker.Dist;
+//import net.minecraftforge.api.distmarker.OnlyIn;
+//import net.minecraftforge.common.util.INBTSerializable;
+//import org.jetbrains.annotations.ApiStatus;
+//import org.jetbrains.annotations.Nullable;
+//
+//import java.util.List;
+//
+//public interface ITARDISLevel extends INBTSerializable<CompoundTag> {
+//	/** Whether the current TARDIS is marked as Operator */
+//	boolean isOperator();
+//	void setOperator(boolean b);
+//
+//	/** Returns whether the TARDIS is capable of taking off in its current state */
+//	boolean CanTakeoff();
+//
+//	/**
+//	 * Returns whether the TARDIS is capable of continuing a flight in its current
+//	 * state
+//	 **/
+//	boolean CanFly();
+//
+//	/**
+//	 * Crash's the TARDIS, basically explosion at the exterior, particles, maybe
+//	 * some fire
+//	 */
+//	void Crash();
+//
+//	/**
+//	 * Initiates the TARDIS takeoff sequence, the sequence goes as follows:
+//	 *
+//	 * <ol>
+//	 * <li>Starts takeoff animation and waits for it to finish
+//	 * <li>Calls ITARDISLevel#Fly() which then
+//	 * <ul>
+//	 * <li>Runs Calculations
+//	 * <ul>
+//	 * <li>Distance to Destination
+//	 * <li>Ticks before the Destination is reached
+//	 * </ul>
+//	 * <li>Finishes up flight
+//	 * <ul>
+//	 * <li>Force loads the exterior world
+//	 * <li>Utterly Destroys the exterior
+//	 * <li>Un-force loads the exterior world
+//	 * </ul>
+//	 * </ul>
+//	 * </ol>
+//	 */
+//	void Dematerialize();
+//
+//	/**
+//	 * Finishes up the takeoff sequence by doing calculations and removing the
+//	 * exterior block
+//	 * <li>Runs Calculations
+//	 *
+//	 * <ul>
+//	 * <li>Distance to Destination
+//	 * <li>Ticks before the Destination is reached
+//	 * </ul>
+//	 *
+//	 * <li>Finishes up flight
+//	 *
+//	 * <ul>
+//	 * <li>Force loads the exterior world
+//	 * <li>Utterly Destroys the exterior
+//	 * <li>Un-force loads the exterior world
+//	 * </ul>
+//	 *
+//	 * </ul>
+//	 */
+//	@ApiStatus.Internal
+//	void Fly();
+//
+//	void ForceLoadExteriorChunk(boolean ForceLoad);
+//
+//	/**
+//	 * THIS ONLY EXISTS CLIENT SIDE DO NOT REFERENCE IT FROM SERVERS OTHERWISE YOU
+//	 * ARE GAY AND WILL CRASH EVERYTHING
+//	 */
+//	@OnlyIn(Dist.CLIENT)
+//	TARDISClientData GetClientData();
+//
+//	ResourceKey<Level> GetCurrentLevel();
+//
+//	TARDISData GetData();
+//
+//	TARDISInteriorData GetEnvironmentalData();
+//
+//	ExteriorTile GetExteriorTile();
+//
+//	TARDISFlightData GetFlightData();
+//
+//	Level GetLevel();
+//
+//	float GetLightLevel();
+//
+//	TARDISNavigationalData GetNavigationalData();
+//
+//	/** Finishes up the landing sequence * */
+//	@ApiStatus.Internal
+//	void Land();
+//
+//	/** For when the TARDIS won't land. */
+//	void FuckingLandAlreadyDammit();
+//
+//	/** Initiates the TARDIS Landing sequence * */
+//	void Rematerialize();
+//
+//	void SetExteriorTile(ExteriorTile tile);
+//
+//	/** Does what it says on the tin */
+//	void Tick();
+//
+//	void ClientTick();
+//
+//	void FlightTick();
+//
+//	void UpdateClient(int toUpdate);
+//
+//	long getTicks();
+//
+//	void setData(TARDISData data);
+//
+//	void setFlightData(TARDISFlightData data);
+//
+//	void setNavigationalData(TARDISNavigationalData data);
+//
+//	void setCurrentFlightEvent(FlightEvent event);
+//	FlightEvent getCurrentFlightEvent();
+//
+//	void UpdateExteriorState(ExteriorState state);
+//
+//	PowerHandler getEnergy();
+//
+//	/**
+//	 * // TODO: THIS! INTERCOM MESSAGING!
+//	 */
+//	void receiveInterCommMessage(String message);
+//
+//	/**
+//	 * Sends an Inter TARDIS Communications message to another TARDIS
+//	 *
+//	 * @param message
+//	 *            The message to be sent
+//	 * @param recipient
+//	 *            The recipients TARDISes dimension RL
+//	 */
+//	void sendInterCommMessage(String message, ResourceLocation recipient);
+//
+//	// ARS
+//
+//	List<ARSGrid> getARSGrids();
+//
+//	void addARSGrid(ARSGrid grid);
+//
+//	void removeARSGrid(ARSPos pos);
+//
+//	@Nullable
+//    ARSGrid getGridAt(ARSPos pos);
+//}
