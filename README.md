@@ -14,4 +14,4 @@ Yet.
 <br /><br />
 <br /><br />
 <br />
-And that fills you with **DETERMINATION**
+And that fills you with **PATIENCE**
