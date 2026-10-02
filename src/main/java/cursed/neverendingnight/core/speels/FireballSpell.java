@@ -1,7 +1,9 @@
 package cursed.neverendingnight.core.speels;
 
 import cursed.neverendingnight.core.util.QuadConsumer;
+import cursed.neverendingnight.server.registries.NNTags;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -22,7 +24,7 @@ public class FireballSpell extends AbstractSpell {
 
     @Override
     public List<TagKey<Item>> requiredTag() {
-        return List.of(//ItemTags.CANDLES
+        return List.of(NNTags.RUDE_BUSTER_HOLDER
                     );
     }
 
