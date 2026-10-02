@@ -1,6 +1,7 @@
 package cursed.neverendingnight;
 
 import com.mojang.logging.LogUtils;
+import cursed.neverendingnight.core.networking.Networking;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -50,6 +51,8 @@ public class Neverendingnight {
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        Networking.registerPackets();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
